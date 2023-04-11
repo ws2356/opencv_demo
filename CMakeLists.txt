@@ -6,13 +6,13 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O0")
 
 set(CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES ${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES})
 
-set(SOURCE_FILES opencv_demo)
-
 find_package(OpenCV REQUIRED)
 
-add_executable(opencv_demo
-  ${SOURCE_FILES}
-)
 
-target_link_libraries(opencv_demo ${OpenCV_LIBS})
+add_executable(opencv_demo_basic_draw opencv_demo_basic_draw.cc)
+target_link_libraries(opencv_demo_basic_draw ${OpenCV_LIBS})
+
+
+add_executable(opencv_demo_text opencv_demo_text.cc)
+target_link_libraries(opencv_demo_text ${OpenCV_LIBS})
 
