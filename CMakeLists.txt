@@ -8,11 +8,11 @@ set(CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES ${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTOR
 
 find_package(OpenCV REQUIRED)
 
+set(targets opencv_demo_basic_draw opencv_demo_text)
 
-add_executable(opencv_demo_basic_draw opencv_demo_basic_draw.cc)
-target_link_libraries(opencv_demo_basic_draw ${OpenCV_LIBS})
-
-
-add_executable(opencv_demo_text opencv_demo_text.cc)
-target_link_libraries(opencv_demo_text ${OpenCV_LIBS})
+foreach(target IN LISTS targets)
+  message(STATUS "processing target: ${target}")
+  add_executable(${target} "${target}.cc")
+  target_link_libraries(${target} ${OpenCV_LIBS})
+endforeach()
 
