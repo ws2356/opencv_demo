@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES ${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTOR
 
 find_package(OpenCV REQUIRED)
 
-set(targets opencv_demo_basic_draw opencv_demo_text opencv_demo_smooth_blur)
+set(targets opencv_demo_basic_draw opencv_demo_text opencv_demo_smooth_blur opencv_demo_more_morphology)
 
 foreach(target IN LISTS targets)
   message(STATUS "processing target: ${target}")
